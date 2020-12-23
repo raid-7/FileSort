@@ -1,0 +1,6 @@
+cmake-build-debug/
+in.txt
+out.txt
+fsort_tmp/
+.idea/
+*.iml
