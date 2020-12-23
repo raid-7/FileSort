@@ -25,8 +25,8 @@ cmake --build .
 # sort in.txt and output result to out.txt
 ./fsort in.txt out.txt
 
-# advice the application to use 500 memory pages simmutaneously
+# advice the application to use 50000 memory pages simmutaneously
 # and sort
-./fsort in.txt out.txt 500
+./fsort in.txt out.txt 50000
 ```
 

@@ -1,4 +1,5 @@
 cmake-build-debug/
+build/
 in.txt
 out.txt
 fsort_tmp/

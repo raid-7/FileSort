@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <cctype>
 
-constexpr size_t DEFAULT_NUM_PAGES = 250;
+constexpr size_t DEFAULT_NUM_PAGES = 25000;
 
 [[noreturn]] static void usage() {
     std::cerr << "usage: fsort <input_file> <output_file> [num_pages]\n";
