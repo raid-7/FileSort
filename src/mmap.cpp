@@ -23,7 +23,7 @@ size_t getPageSize() {
     return res;
 }
 
-static size_t ceilDivisible(size_t value, size_t divisor) {
+static size_t ceilToDivisible(size_t value, size_t divisor) {
     return ((value + divisor - 1) / divisor) * divisor;
 }
 
@@ -43,8 +43,8 @@ MemoryMappedFileBase::MemoryMappedFileBase(const fs::path& path, size_t offset, 
     }
 
     size_t page_size = getPageSize();
-    size_t legal_size = ceilDivisible(size, page_size);
     size_t legal_offset = floorToDivisible(offset, page_size);
+    size_t legal_size = ceilToDivisible(size + (offset - legal_offset), page_size);
 
     region_ = mmap(nullptr, legal_size, PROT_READ | (readonly ? 0 : PROT_WRITE), readonly ? MAP_PRIVATE : MAP_SHARED, fd, legal_offset);
     close(fd);
