@@ -11,7 +11,7 @@
 void generate(char* begin, char* end, size_t max_line_len) {
     auto micro_from_epoch =
         std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now().time_since_epoch());
-    std::mt19937_64 random_engine(micro_from_epoch.count());
+    std::ranlux24_base random_engine(micro_from_epoch.count());
     std::uniform_int_distribution<size_t> length_distribution{1, max_line_len};
     std::uniform_int_distribution<char> char_distribution{'/', '~'};
 
